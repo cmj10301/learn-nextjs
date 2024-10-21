@@ -8,6 +8,12 @@ export const metadata :Metadata = {
   title: "Home",
 }
 
+interface Movie {
+  id : string;
+  poster_path : string;
+  title : string;
+}
+
 
 async function getMovies() {
   const response = await fetch(API_URL);
@@ -19,7 +25,7 @@ export default async function HomePage() {
   const movies = await getMovies();
   return (
     <div className={styles.container}>
-      {movies.map((movie) => (
+      {movies.map((movie : Movie) => (
         <Movie 
           key={movie.id}
           id={movie.id}
