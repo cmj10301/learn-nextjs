@@ -21,7 +21,7 @@ export default async function HomePage() {
     <div>
       {movies.map((movie) => (
         <li key={movie.id}>
-          <Link href={`/movies/${movie.id}`}>{movie.id},{movie.title}</Link>
+          <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
         </li>
       ))}
     </div>
